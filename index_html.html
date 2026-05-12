@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KLIF — B2B 솔루션 브로셔</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --black:      #0C0C0C;
+  --white:      #FFFFFF;
+  --blue:       #1847CC;
+  --blue-light: #EEF2FD;
+  --gray-bg:    #F7F7F7;
+  --gray-line:  #E4E4E4;
+  --gray-mid:   #999;
+  --font: 'Noto Sans KR', -apple-system, sans-serif;
+  --max: 860px;
+  --pad: 48px;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); background: var(--white); color: var(--black); -webkit-font-smoothing: antialiased; }
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); }
+
+/* NAV */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--gray-line);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 var(--pad);
+  height: 54px; display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { font-size: 12px; font-weight: 900; letter-spacing: 4px; }
+.nav-links { display: flex; gap: 28px; }
+.nav-links a { font-size: 12px; font-weight: 400; color: var(--gray-mid); text-decoration: none; transition: color .18s; }
+.nav-links a:hover { color: var(--black); }
+
+/* SECTION */
+section { padding: 80px 0; }
+section + section { border-top: 1px solid var(--gray-line); }
+
+/* TYPE */
+.label {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 500; color: var(--blue);
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 14px;
+}
+.label::before { content:''; display:block; width:18px; height:1.5px; background:var(--blue); }
+
+h1 { font-size: clamp(30px,4.5vw,46px); font-weight: 900; line-height: 1.2; word-break: keep-all; }
+h2 { font-size: clamp(22px,3.2vw,32px); font-weight: 900; line-height: 1.25; word-break: keep-all; }
+h3 { font-size: 14px; font-weight: 700; line-height: 1.5; word-break: keep-all; }
+.lead { font-size: 15px; font-weight: 300; line-height: 2; color: #555; word-break: keep-all; margin-top: 18px; max-width: 600px; }
+.body { font-size: 12.5px; font-weight: 300; line-height: 1.85; color: #555; word-break: keep-all; }
+
+/* HERO */
+#hero { padding: 92px 0 72px; }
+.hero-sub { font-size: 15px; font-weight: 300; line-height: 1.9; color: #666; max-width: 520px; margin: 18px 0 36px; word-break: keep-all; }
+.hero-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { border: 1px solid var(--gray-line); padding: 6px 14px; font-size: 11.5px; color: #777; }
+.hero-rule { width: 100%; height: 1px; background: var(--gray-line); margin-top: 60px; }
+
+/* ABOUT */
+.svc-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); margin-top: 44px; }
+.svc-card { background: var(--white); padding: 26px 22px; }
+.svc-ic { display: block; width: 26px; height: 26px; margin-bottom: 14px; }
+
+.how-box { background: var(--gray-bg); padding: 36px 40px; margin-top: 48px; }
+.how-lbl { font-size: 10px; font-weight: 500; color: var(--blue); letter-spacing: 2.5px; text-transform: uppercase; margin-bottom: 6px; }
+.how-title { font-size: 17px; font-weight: 800; margin-bottom: 28px; }
+.steps { display: grid; grid-template-columns: repeat(5,1fr); }
+.step { padding: 0 16px; position: relative; }
+.step:first-child { padding-left: 0; }
+.step:last-child { padding-right: 0; }
+.step + .step { border-left: 1px solid var(--gray-line); }
+.step-n { font-size: 30px; font-weight: 900; color: var(--blue); opacity: 0.1; line-height: 1; margin-bottom: 4px; }
+.step-title { font-size: 11.5px; font-weight: 700; line-height: 1.5; margin-bottom: 6px; word-break: keep-all; }
+.step-desc { font-size: 10.5px; font-weight: 300; color: #666; line-height: 1.65; word-break: keep-all; }
+
+/* LANDSCAPING */
+.venn-wrap { display: flex; justify-content: center; margin: 8px 0; }
+
+.blue-note { background: var(--blue); padding: 18px 22px; margin: 14px 0; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
+.blue-note h3 { color: white; font-size: 13.5px; flex-shrink: 0; }
+.blue-note p { color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 300; line-height: 1.7; }
+
+.blob-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin: 20px 0; }
+.blob { background: var(--blue); border-radius: 999px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px; color: white; }
+.blob-lbl { font-size: 13px; opacity: 0.85; line-height: 1.55; margin-bottom: 8px; word-break: keep-all; }
+.blob-sol { font-size: 15px; font-weight: 700; word-break: keep-all; }
+
+.cat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); margin-top: 36px; }
+.cat { background: var(--white); padding: 22px; }
+.cat-en { font-size: 10px; font-weight: 600; color: var(--blue); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+.cat h3 { font-size: 13px; margin-bottom: 7px; }
+
+/* PLANT CARE */
+.care-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; margin-top: 44px; }
+.care-card { border-top: 2px solid var(--blue); background: var(--blue-light); padding: 22px 20px; }
+.care-card svg { display: block; margin-bottom: 12px; }
+.care-card h3 { font-size: 13px; margin-bottom: 7px; }
+
+.tbl-wrap { margin-top: 48px; }
+.tbl-label { font-size: 15px; font-weight: 800; margin-bottom: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; font-family: var(--font); }
+thead th { background: var(--black); color: white; padding: 11px 16px; font-weight: 600; font-family: var(--font); }
+thead th:first-child { text-align: left; }
+thead th:not(:first-child) { text-align: center; }
+tbody td { padding: 11px 16px; border-bottom: 1px solid var(--gray-line); text-align: center; font-weight: 300; color: #444; font-family: var(--font); }
+tbody td:first-child { font-weight: 600; text-align: left; color: var(--black); }
+tbody tr:nth-child(even) td { background: var(--gray-bg); }
+
+/* MODULAR */
+.feat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); margin-top: 44px; }
+.feat-card { background: var(--white); padding: 26px 22px; }
+.feat-card svg { display: block; margin-bottom: 12px; }
+.feat-card h3 { font-size: 14px; margin-bottom: 8px; }
+
+.b2b-section { margin-top: 52px; }
+.b2b-top-label { font-size: 10.5px; font-weight: 600; color: var(--gray-mid); letter-spacing: 2.5px; text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--gray-line); margin-bottom: 16px; }
+.b2b-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); }
+.b2b-card { background: var(--black); padding: 22px 20px; }
+.b2b-num { font-size: 9.5px; font-weight: 700; color: var(--blue); letter-spacing: 2px; margin-bottom: 9px; }
+.b2b-t { font-size: 12.5px; font-weight: 700; color: white; line-height: 1.5; margin-bottom: 8px; word-break: keep-all; }
+.b2b-d { font-size: 11.5px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; word-break: keep-all; }
+
+/* CONTACT */
+#contact { padding-bottom: 96px; }
+.ct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 48px; }
+.ct-sec-label { font-size: 10.5px; font-weight: 600; color: var(--gray-mid); letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--gray-line); margin-bottom: 20px; }
+.inq-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.inq-dot { width: 5px; height: 5px; background: var(--blue); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+.inq-txt { font-size: 13.5px; font-weight: 300; color: #444; line-height: 1.5; }
+.info-item { display: flex; gap: 14px; margin-bottom: 13px; align-items: baseline; }
+.info-lbl { font-size: 10px; font-weight: 700; color: var(--blue); min-width: 50px; letter-spacing: 0.8px; text-transform: uppercase; }
+.info-val { font-size: 13.5px; font-weight: 300; color: #444; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
+.footer-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--pad); display: flex; justify-content: space-between; align-items: center; }
+.footer-logo { font-size: 11px; font-weight: 900; letter-spacing: 4px; }
+.footer-mid { font-size: 11px; color: #bbb; font-weight: 300; }
+.footer-right { font-size: 11px; color: #bbb; font-weight: 300; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">KLIF</div>
+    <div class="nav-links">
+      <a href="#about">소개</a>
+      <a href="#landscaping">조경 솔루션</a>
+      <a href="#care">식물 관리</a>
+      <a href="#modular">모듈러 렌탈</a>
+      <a href="#contact">문의</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+<div class="wrap">
+  <div class="label">B2B Solution Guide</div>
+  <h1>공간을 살아있게<br>만드는 <span style="color:var(--blue);">식물 솔루션</span></h1>
+  <p class="hero-sub">조경 디자인부터 식물관리, 모듈러 제품 렌탈까지<br>모든 그린 서비스를 클리프 하나로 해결하세요.</p>
+  <div class="hero-chips">
+    <div class="chip">조경 솔루션</div>
+    <div class="chip">식물 관리 서비스</div>
+    <div class="chip">모듈러 렌탈 &amp; 케어</div>
+  </div>
+  <div class="hero-rule"></div>
+</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<div class="wrap">
+  <div class="label">About KLIF</div>
+  <h2>식물이 필요한 모든 공간,<br>클리프와 함께</h2>
+  <p class="lead">15년간의 노하우로 쌓아온 조경 프로젝트 경험과 식물 콘텐츠 기획력을 바탕으로, 공간의 성격과 목적, 환경 조건을 정밀하게 분석하여 최적의 식물 솔루션을 제안합니다. 클리프는 단순한 조경 시공을 넘어, 고객의 브랜드와 공간 아이덴티티에 맞는 식물 환경을 만들어드립니다.</p>
+
+  <div class="svc-grid">
+    <div class="svc-card">
+      <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22V12"/><path d="M12 12C12 7 8 3.5 4 3c0 5 3 8.5 8 9z"/>
+        <path d="M12 12C12 7 16 3.5 20 3c0 5-3 8.5-8 9z"/>
+        <path d="M6 17c1.5 1 3.5 1.5 6 1.5s4.5-.5 6-1.5"/>
+      </svg>
+      <h3>조경 솔루션</h3>
+      <p class="body">공간 맞춤형 식물 조경 설계 및 시공. 모듈러·스탠다드·콤비네이션 세 가지 방식으로 최적의 솔루션을 제안합니다.</p>
+    </div>
+    <div class="svc-card">
+      <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+      </svg>
+      <h3>식물 관리 서비스</h3>
+      <p class="body">전문가 정기 방문 유지 관리. 공간 맞춤 케어, 시즌 리프레시, 중증 케어 및 식물 교체 서비스를 제공합니다.</p>
+    </div>
+    <div class="svc-card">
+      <svg class="svc-ic" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="9" height="9" rx="1.5"/><rect x="13" y="7" width="9" height="9" rx="1.5"/>
+        <path d="M6.5 2v3M17.5 2v3"/>
+      </svg>
+      <h3>모듈러 렌탈 &amp; 케어</h3>
+      <p class="body">모듈러 제품 렌탈 및 구매, 맞춤 케어 서비스. B2B 전용 대량 구매 할인 및 식물 보증 혜택을 제공합니다.</p>
+    </div>
+  </div>
+
+  <div class="how-box">
+    <div class="how-lbl">How It Works</div>
+    <div class="how-title">클리프와 함께하는 5단계 프로세스</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-title">현장 방문 &amp;<br>상태 진단</div>
+        <div class="step-desc">공간의 빛, 온도, 습도, 동선과 식물 상태 분석 및 환경 조건 점검</div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-title">맞춤 플랜<br>제안</div>
+        <div class="step-desc">방문 주기, 관리 방법, 식물 운용 포함 최적 플랜 제안</div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-title">정기 방문 &amp;<br>유지관리</div>
+        <div class="step-desc">물주기·영양 공급·병충해 관리 및 환경 체크</div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div class="step-title">식물 교체 &amp;<br>스타일링</div>
+        <div class="step-desc">계절별 식물 교체 및 공간 스타일링 업데이트</div>
+      </div>
+      <div class="step">
+        <div class="step-n">5</div>
+        <div class="step-title">피드백 &amp;<br>리포트 제공</div>
+        <div class="step-desc">관리 이력과 식물 상태 리포트 정기 전달</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- LANDSCAPING -->
+<section id="landscaping">
+<div class="wrap">
+  <div class="label">Space Landscaping</div>
+  <h2>사람과 공간에 꼭 맞는<br>최적의 조경 솔루션</h2>
+
+  <div class="venn-wrap">
+    <svg viewBox="0 0 760 190" style="width:100%;max-width:760px;height:auto;" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans KR', sans-serif">
+      <ellipse cx="268" cy="95" rx="208" ry="86" fill="none" stroke="#0C0C0C" stroke-width="1.4"/>
+      <ellipse cx="492" cy="95" rx="208" ry="86" fill="none" stroke="#0C0C0C" stroke-width="1.4"/>
+      <text x="138" y="80" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0C0C0C">모듈러 솔루션 조경</text>
+      <text x="138" y="98" text-anchor="middle" font-size="11" fill="#666">모듈러 솔루션 시공 /</text>
+      <text x="138" y="113" text-anchor="middle" font-size="11" fill="#666">모듈러 제품</text>
+      <text x="380" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#0C0C0C">콤비네이션 조경</text>
+      <text x="380" y="98" text-anchor="middle" font-size="11" fill="#555">모듈러 솔루션 +</text>
+      <text x="380" y="113" text-anchor="middle" font-size="11" fill="#555">스탠다드 조경 시공</text>
+      <text x="622" y="80" text-anchor="middle" font-size="13.5" font-weight="700" fill="#0C0C0C">스탠다드 조경</text>
+      <text x="622" y="98" text-anchor="middle" font-size="11" fill="#666">조화, 생화</text>
+      <text x="622" y="113" text-anchor="middle" font-size="11" fill="#666">일반 조경 시공</text>
+    </svg>
+  </div>
+
+
+  <div class="blob-row">
+    <div class="blob">
+      <div class="blob-lbl">이동과 변화가<br>잦은 공간</div>
+      <div class="blob-sol">모듈러 제품</div>
+    </div>
+    <div class="blob">
+      <div class="blob-lbl">유지 관리가<br>수월한 공간</div>
+      <div class="blob-sol">일반 조경 시공</div>
+    </div>
+    <div class="blob">
+      <div class="blob-lbl">환경 조건이 나쁜<br>사각지대 공간</div>
+      <div class="blob-sol">모듈러 솔루션</div>
+    </div>
+    <div class="blob">
+      <div class="blob-lbl">식물 생존이<br>불가능한 공간</div>
+      <div class="blob-sol">조화 시공</div>
+    </div>
+  </div>
+
+  <div class="cat-row">
+    <div class="cat">
+      <div class="cat-en">Residential &amp; Commercial</div>
+      <h3>상업 &amp; 주거공간</h3>
+      <p class="body">사용자 목적과 동선을 반영한 맞춤 조경 설계, 공간 목적과 환경을 함께 고려한 솔루션 제공</p>
+    </div>
+    <div class="cat">
+      <div class="cat-en">Event &amp; Popup Styling</div>
+      <h3>이벤트 &amp; 팝업 스타일링</h3>
+      <p class="body">전시, 팝업, 이벤트 기간 한정 식물 스타일링, 설치 및 철수 관리 포함 원스톱 서비스</p>
+    </div>
+    <div class="cat">
+      <div class="cat-en">Care &amp; Maintenance</div>
+      <h3>관리 및 유지관수</h3>
+      <p class="body">정기 방문 유지관리, 계절별 교체, 공간에 최적화된 개인화 케어링 프로그램 제공</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PLANT CARE -->
+<section id="care">
+<div class="wrap">
+  <div class="label">Plant Care Service</div>
+  <h2>전문가의 손길로 유지되는<br>늘 건강하고 푸른 공간</h2>
+  <p class="lead">바쁜 업무 환경에서도 식물이 살아있는 공간을 유지할 수 있도록, 클리프 식물 전문가가 정기적으로 방문해 식물의 건강 상태부터 공간의 미적 균형까지 섬세하게 관리해드립니다.</p>
+
+  <div class="care-grid">
+    <div class="care-card">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round">
+        <circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/>
+      </svg>
+      <h3>공간 맞춤형 유지관리</h3>
+      <p class="body">공간의 빛, 온도, 습도, 동선에 맞게 최적화된 관리 솔루션을 제공합니다.</p>
+    </div>
+    <div class="care-card">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/>
+        <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+        <line x1="3" y1="10" x2="21" y2="10"/>
+      </svg>
+      <h3>정기 방문 &amp; 시즌별 리프레시</h3>
+      <p class="body">계절마다 식물 스타일 업데이트와 스타일링으로 공간에 생기를 더합니다.</p>
+    </div>
+    <div class="care-card">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round">
+        <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+      </svg>
+      <h3>중증 케어 &amp; 식물 교체</h3>
+      <p class="body">이상이 생긴 식물을 즉시 대응하고 새 식물로 교체하는 긴급 케어 서비스입니다.</p>
+    </div>
+  </div>
+
+  <div class="tbl-wrap">
+    <div class="tbl-label">케어링 프로그램</div>
+    <table>
+      <thead>
+        <tr><th style="width:22%;">항목</th><th>베이직</th><th>프라이밍</th><th>프라이밍+</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>방문 횟수</td><td>월 2–3회</td><td>월 3–4회</td><td>월 3–4회</td></tr>
+        <tr><td>기본 관리</td><td>관수, 소독, 수형</td><td>관수, 소독, 수형</td><td>관수, 소독, 수형</td></tr>
+        <tr><td>식물 교육</td><td>제공</td><td>제공</td><td>제공</td></tr>
+        <tr><td>추가 관리</td><td>—</td><td>—</td><td>월 1회 식물 교체</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</section>
+
+<!-- MODULAR -->
+<section id="modular">
+<div class="wrap">
+  <div class="label">Modular Rental &amp; Care</div>
+  <h2>클리프 모듈러 솔루션으로<br>만드는 유연한 공간</h2>
+  <p class="lead">클리프의 시그니처 제품 모듈러는 이동이 쉽고, 어떤 공간에도 어울리는 식물 디스플레이 솔루션입니다.</p>
+
+  <div class="feat-grid">
+    <div class="feat-card">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round">
+        <rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/>
+        <rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/>
+      </svg>
+      <h3>모듈형 구조</h3>
+      <p class="body">필요에 따라 조합·확장이 가능한 모듈 구조. 공간이 바뀌어도 재구성하여 계속 사용할 수 있습니다.</p>
+    </div>
+    <div class="feat-card">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round">
+        <rect x="1" y="8" width="14" height="10" rx="1.5"/>
+        <path d="M18 8l-4-4M18 8l-4 4M15 8h6"/>
+      </svg>
+      <h3>이동 편의성</h3>
+      <p class="body">이동과 변화가 잦은 공간에 최적화. 팝업 스토어, 이벤트, 오피스 이전 시에도 유연하게 대응합니다.</p>
+    </div>
+    <div class="feat-card">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round">
+        <path d="M12 22a10 10 0 100-20 10 10 0 000 20z"/><path d="M8 12l3 3 5-5"/>
+      </svg>
+      <h3>관리 용이성</h3>
+      <p class="body">클리프 케어 서비스와 연동되어 별도 관리 없이도 항상 건강한 식물 상태를 유지할 수 있습니다.</p>
+    </div>
+    <div class="feat-card">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1847CC" stroke-width="1.7" stroke-linecap="round">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+      </svg>
+      <h3>맞춤 스타일링</h3>
+      <p class="body">브랜드 분위기와 공간 콘셉트에 맞춘 식물 선정과 연출로 공간의 정체성을 강화합니다.</p>
+    </div>
+  </div>
+
+  <div class="b2b-section">
+    <div class="b2b-top-label">B2B 특별 혜택 — 대량 구매 &amp; 렌탈</div>
+    <div class="b2b-grid">
+      <div class="b2b-card">
+        <div class="b2b-num">BENEFIT 01</div>
+        <div class="b2b-t">오피스 및 상업공간<br>대량 구매 혜택</div>
+        <div class="b2b-d">수량이 많아질수록 더 큰 할인. 모듈러 시스템 대량 구매 시 전담 케어 서비스 연동</div>
+      </div>
+      <div class="b2b-card">
+        <div class="b2b-num">BENEFIT 02</div>
+        <div class="b2b-t">단기 및 장기 렌탈</div>
+        <div class="b2b-d">12개월·24개월 렌탈 플랜. 기간 내 정기 식물 관리 포함. 이벤트·팝업 단기 렌탈도 가능</div>
+      </div>
+      <div class="b2b-card">
+        <div class="b2b-num">BENEFIT 03</div>
+        <div class="b2b-t">B2B 고객을 위한<br>케어 서비스</div>
+        <div class="b2b-d">전담 매니저 배정, 맞춤형 식물 보증 서비스, 정기 리포트 제공</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<div class="wrap">
+  <div class="label">Contact</div>
+  <h2>지금 바로 클리프와<br>상담을 시작하세요</h2>
+  <p class="lead">공간의 규모와 목적에 맞는 최적의 식물 솔루션을 제안해드립니다. 작은 사무실부터 대형 상업공간까지, 클리프가 함께합니다.</p>
+
+  <div class="ct-grid">
+    <div>
+      <div class="ct-sec-label">문의 유형</div>
+      <div class="inq-item"><div class="inq-dot"></div><div class="inq-txt">조경 시공 견적 문의</div></div>
+      <div class="inq-item"><div class="inq-dot"></div><div class="inq-txt">정기 관리 서비스 상담</div></div>
+      <div class="inq-item"><div class="inq-dot"></div><div class="inq-txt">모듈러 렌탈 &amp; 대량 구매 패키지 문의</div></div>
+      <div class="inq-item"><div class="inq-dot"></div><div class="inq-txt">이벤트·팝업 스타일링 의뢰</div></div>
+    </div>
+    <div>
+      <div class="ct-sec-label">연락처</div>
+      <div class="info-item"><div class="info-lbl">Email</div><div class="info-val">info@potscompany.kr</div></div>
+      <div class="info-item"><div class="info-lbl">Tel</div><div class="info-val">070-8888-1799</div></div>
+      <div class="info-item"><div class="info-lbl">Web</div><div class="info-val">www.klif.co.kr</div></div>
+      <div class="info-item"><div class="info-lbl">SNS</div><div class="info-val">@klif_official</div></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">KLIF</div>
+    <div class="footer-mid">식물로 공간을 완성하다</div>
+    <div class="footer-right">POTS COMPANY · klif.co.kr</div>
+  </div>
+</footer>
+
+</body>
+</html>
