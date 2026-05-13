@@ -119,13 +119,13 @@ tbody td:first-child { font-weight: 600; text-align: left; color: var(--black); 
 tbody tr:nth-child(even) td { background: var(--gray-bg); }
 
 /* MODULAR PRODUCT SECTION */
-.mp-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 0; }
+.mp-hero { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: center; margin-top: 0; }
 .mp-hero-text h2 { margin-bottom: 16px; }
 .mp-hero-img { position: relative; }
-.mp-hero-img img { width: 100%; height: auto; display: block; }
+.mp-hero-img img { width: 100%; height: auto; display: block; min-height: 320px; object-fit: contain; }
 
-.mp-pot { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--gray-line); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-.mp-pot-img img { width: 100%; height: auto; display: block; }
+.mp-pot { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--gray-line); display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+.mp-pot-img img { width: 100%; height: auto; display: block; min-height: 320px; object-fit: contain; }
 .mp-pot-list { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
 .mp-pot-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: #444; line-height: 1.6; }
 .mp-pot-item::before { content: '—'; color: var(--blue); font-weight: 600; flex-shrink: 0; }
@@ -283,7 +283,7 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
   </div>
 
   <!-- 6가지 기술 카드 -->
-  <div style="margin-top:56px;">
+  <div style="margin-top:20px;">
     <div class="tech-label">특허받은 모듈러가 만드는 6가지 압도적 기술</div>
     <div class="tech-grid">
       <div class="tech-card">
@@ -300,7 +300,7 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
       </div>
       <div class="tech-card">
         <h3>안전한 실내 인프라</h3>
-        <p class="body">물 넘침 걱정이 없이 카페테, 원목 마루 어디든 안심하고 설치 가능합니다.</p>
+        <p class="body">물 넘침 걱정이 없이 카페테리아, 원목 마루 어디든 안심하고 설치 가능합니다.</p>
       </div>
       <div class="tech-card">
         <h3>누구나 전문가</h3>
