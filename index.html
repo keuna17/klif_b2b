@@ -140,10 +140,10 @@ tbody tr:nth-child(even) td { background: var(--gray-bg); }
 .b2b-section { margin-top: 52px; }
 .b2b-top-label { font-size: 15px; font-weight: 600; color: var(--gray-mid); letter-spacing: 2.5px; text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--gray-line); margin-bottom: 16px; }
 .b2b-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); }
-.b2b-card { background: var(--black); padding: 22px 20px; }
+.b2b-card { background: var(--gray-bg); padding: 22px 20px; }
 .b2b-num { font-size: 9.5px; font-weight: 700; color: var(--blue); letter-spacing: 2px; margin-bottom: 9px; }
-.b2b-t { font-size: 12.5px; font-weight: 700; color: white; line-height: 1.5; margin-bottom: 8px; word-break: keep-all; }
-.b2b-d { font-size: 11.5px; font-weight: 300; color: rgba(255,255,255,0.5); line-height: 1.75; word-break: keep-all; }
+.b2b-t { font-size: 12.5px; font-weight: 700; color: var(--black); line-height: 1.5; margin-bottom: 8px; word-break: keep-all; }
+.b2b-d { font-size: 11.5px; font-weight: 300; color: #666; line-height: 1.75; word-break: keep-all; }
 
 /* CONTACT */
 #contact { padding-bottom: 96px; }
@@ -215,7 +215,23 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
   .mp-pot { page-break-inside: avoid; }
   table { page-break-inside: avoid; }
 
-  /* 페이지 나누기 위치 */
+  /* 모듈러 솔루션 — 1페이지 압축 */
+  #modular-product { padding: 20px 0; }
+  #modular-product .mp-hero { gap: 24px; }
+  #modular-product .mp-hero-img img { min-height: 160px; max-height: 200px; }
+  #modular-product .mp-hero-text h2 { font-size: 18px; margin-bottom: 8px; }
+  #modular-product .mp-hero-text .lead { font-size: 11px; line-height: 1.65; margin-top: 8px; }
+  #modular-product div[style] { margin-top: 12px !important; }
+  #modular-product .tech-label { font-size: 14px; margin-bottom: 6px; }
+  #modular-product .tech-card { padding: 12px 14px; }
+  #modular-product .tech-card h3 { font-size: 11.5px; margin-bottom: 4px; }
+  #modular-product .tech-card .body { font-size: 10px; line-height: 1.55; }
+  #modular-product .mp-pot { margin-top: 16px; padding-top: 16px; gap: 24px; }
+  #modular-product .mp-pot-img img { min-height: 160px; max-height: 200px; }
+  #modular-product .mp-pot h2 { font-size: 18px; }
+  #modular-product .mp-pot .lead { font-size: 11px; line-height: 1.65; margin-top: 8px; }
+  #modular-product .mp-pot-list { margin-top: 10px; gap: 5px; }
+  #modular-product .mp-pot-item { font-size: 11px; }
   #modular-product { page-break-before: always; }
   #landscaping     { page-break-before: always; }
   #care            { page-break-before: always; }
