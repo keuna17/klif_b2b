@@ -162,6 +162,65 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
 .footer-logo { font-size: 11px; font-weight: 900; letter-spacing: 4px; }
 .footer-mid { font-size: 11px; color: #bbb; font-weight: 300; }
 .footer-right { font-size: 11px; color: #bbb; font-weight: 300; }
+
+/* ===================== PRINT ===================== */
+@media print {
+  @page { size: A4 portrait; margin: 12mm 14mm; }
+
+  /* 네비게이션 숨기기 */
+  nav { display: none; }
+
+  /* 섹션 여백 축소 */
+  section { padding: 32px 0; }
+  section + section { border-top: 1px solid var(--gray-line); }
+  #hero { padding: 32px 0 24px; }
+  #contact { padding-bottom: 32px; }
+
+  /* 전체 너비 활용 */
+  .wrap { max-width: 100%; padding: 0; }
+
+  /* 폰트 축소 */
+  h1 { font-size: 32px; }
+  h2 { font-size: 22px; }
+  .lead { font-size: 13px; line-height: 1.8; }
+  .body { font-size: 11px; }
+  .hero-sub { font-size: 13px; }
+  .hero-rule { margin-top: 32px; }
+
+  /* HOW IT WORKS 여백 축소 */
+  .how-box { padding: 24px 28px; margin-top: 28px; }
+  .how-title { margin-bottom: 20px; font-size: 15px; }
+
+  /* 이미지 */
+  .mp-hero-img img { min-height: 200px; }
+  .mp-pot-img img { min-height: 200px; }
+  .mp-pot { margin-top: 32px; padding-top: 32px; }
+
+  /* 기술 카드 */
+  .tech-label { font-size: 18px; }
+  .tech-card { padding: 18px; }
+
+  /* 배경색·컬러 인쇄 허용 */
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  /* 섹션 중간에서 잘리지 않도록 */
+  section { page-break-inside: avoid; }
+  .svc-grid { page-break-inside: avoid; }
+  .how-box { page-break-inside: avoid; }
+  .care-grid { page-break-inside: avoid; }
+  .feat-grid { page-break-inside: avoid; }
+  .b2b-grid { page-break-inside: avoid; }
+  .tech-grid { page-break-inside: avoid; }
+  .mp-hero { page-break-inside: avoid; }
+  .mp-pot { page-break-inside: avoid; }
+  table { page-break-inside: avoid; }
+
+  /* 페이지 나누기 위치 */
+  #modular-product { page-break-before: always; }
+  #landscaping     { page-break-before: always; }
+  #care            { page-break-before: always; }
+  #modular         { page-break-before: always; }
+}
 </style>
 </head>
 <body>
@@ -444,7 +503,7 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
 <div class="wrap">
   <div class="label">Modular Rental &amp; Care</div>
   <h2>클리프 모듈러 솔루션으로<br>만드는 유연한 공간</h2>
-  <p class="lead">클리프의 시그니처 제품 모듈러는 이동이 쉽고,<br>어떤 공간에도 어울리는 식물 디스플레이 솔루션입니다.</p>
+  <p class="lead" style="max-width:100%;">클리프의 시그니처 제품 모듈러는 이동이 쉽고,<br>어떤 공간에도 어울리는 식물 디스플레이 솔루션입니다.</p>
 
   <div class="feat-grid">
     <div class="feat-card">
