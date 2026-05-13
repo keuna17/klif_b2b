@@ -88,10 +88,6 @@ h3 { font-size: 14px; font-weight: 700; line-height: 1.5; word-break: keep-all; 
 /* LANDSCAPING */
 .venn-wrap { display: flex; justify-content: center; margin: 8px 0; }
 
-.blue-note { background: var(--blue); padding: 18px 22px; margin: 14px 0; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; }
-.blue-note h3 { color: white; font-size: 13.5px; flex-shrink: 0; }
-.blue-note p { color: rgba(255,255,255,0.7); font-size: 12px; font-weight: 300; line-height: 1.7; }
-
 .blob-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin: 20px 0; }
 .blob { background: var(--blue); border-radius: 999px; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 16px; color: white; }
 .blob-lbl { font-size: 13px; opacity: 0.85; line-height: 1.55; margin-bottom: 8px; word-break: keep-all; }
@@ -119,28 +115,30 @@ tbody td:first-child { font-weight: 600; text-align: left; color: var(--black); 
 tbody tr:nth-child(even) td { background: var(--gray-bg); }
 
 /* MODULAR PRODUCT SECTION */
-.mp-hero { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; align-items: center; margin-top: 0; }
+.mp-hero { display: grid; grid-template-columns: 380px 1fr; gap: 48px; align-items: center; margin-top: 0; }
 .mp-hero-text h2 { margin-bottom: 16px; }
 .mp-hero-img { position: relative; }
 .mp-hero-img img { width: 100%; height: auto; display: block; min-height: 320px; object-fit: contain; }
 
-.mp-pot { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--gray-line); display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: center; }
+.mp-pot { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--gray-line); display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: center; }
 .mp-pot-img img { width: 100%; height: auto; display: block; min-height: 320px; object-fit: contain; }
 .mp-pot-list { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
 .mp-pot-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: #444; line-height: 1.6; }
 .mp-pot-item::before { content: '—'; color: var(--blue); font-weight: 600; flex-shrink: 0; }
 
-.tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); margin-top: 56px; }
+.tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); margin-top: 12px; }
 .tech-card { background: var(--white); padding: 28px 24px; }
 .tech-card h3 { font-size: 15px; margin-bottom: 10px; }
 .tech-label { font-size: 22px; font-weight: 900; color: var(--black); letter-spacing: 0; text-transform: none; margin-bottom: 12px; line-height: 1.3; word-break: keep-all; }
+
+/* MODULAR RENTAL */
 .feat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); margin-top: 44px; }
 .feat-card { background: var(--white); padding: 26px 22px; }
 .feat-card svg { display: block; margin-bottom: 12px; }
 .feat-card h3 { font-size: 14px; margin-bottom: 8px; }
 
 .b2b-section { margin-top: 52px; }
-.b2b-top-label { font-size: 10.5px; font-weight: 600; color: var(--gray-mid); letter-spacing: 2.5px; text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--gray-line); margin-bottom: 16px; }
+.b2b-top-label { font-size: 15px; font-weight: 600; color: var(--gray-mid); letter-spacing: 2.5px; text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--gray-line); margin-bottom: 16px; }
 .b2b-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); }
 .b2b-card { background: var(--black); padding: 22px 20px; }
 .b2b-num { font-size: 9.5px; font-weight: 700; color: var(--blue); letter-spacing: 2px; margin-bottom: 9px; }
@@ -150,7 +148,7 @@ tbody tr:nth-child(even) td { background: var(--gray-bg); }
 /* CONTACT */
 #contact { padding-bottom: 96px; }
 .ct-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; margin-top: 48px; }
-.ct-sec-label { font-size: 10.5px; font-weight: 600; color: var(--gray-mid); letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--gray-line); margin-bottom: 20px; }
+.ct-sec-label { font-size: 15px; font-weight: 600; color: var(--gray-mid); letter-spacing: 2px; text-transform: uppercase; padding-bottom: 12px; border-bottom: 1px solid var(--gray-line); margin-bottom: 20px; }
 .inq-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
 .inq-dot { width: 5px; height: 5px; background: var(--blue); border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
 .inq-txt { font-size: 13.5px; font-weight: 300; color: #444; line-height: 1.5; }
@@ -271,18 +269,16 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
 <div class="wrap">
   <div class="label">Modular Solution</div>
 
-  <!-- Hero: 텍스트 + 이미지 -->
   <div class="mp-hero">
     <div class="mp-hero-text">
       <h2>더 쉽게, 더 편리하게<br>관리하는 조경 솔루션</h2>
       <p class="lead">실내에서 식물을 기르고 가꾸는 일은 생각보다 많은 어려움이 있습니다. 클리프의 모듈러 솔루션은 이러한 번거로움을 덜어주어, 누구나 쉽고 편안하게 식물을 즐길 수 있는 실내 가든 시스템입니다.</p>
     </div>
     <div class="mp-hero-img">
-      <img src="modular.jpg" alt="클리프 모듈러 솔루션">
+      <img src="modular.png" alt="클리프 모듈러 솔루션">
     </div>
   </div>
 
-  <!-- 6가지 기술 카드 -->
   <div style="margin-top:20px;">
     <div class="tech-label">특허받은 모듈러가 만드는 6가지 압도적 기술</div>
     <div class="tech-grid">
@@ -313,7 +309,6 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
     </div>
   </div>
 
-  <!-- 모듈형 화분 시스템 -->
   <div class="mp-pot">
     <div class="mp-pot-img">
       <img src="modular_inside.jpg" alt="모듈형 화분 시스템">
@@ -354,7 +349,6 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
       <text x="622" y="113" text-anchor="middle" font-size="11" fill="#666">일반 조경 시공</text>
     </svg>
   </div>
-
 
   <div class="blob-row">
     <div class="blob">
@@ -445,7 +439,7 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
 </div>
 </section>
 
-<!-- MODULAR -->
+<!-- MODULAR RENTAL -->
 <section id="modular">
 <div class="wrap">
   <div class="label">Modular Rental &amp; Care</div>
@@ -527,9 +521,9 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
     <div>
       <div class="ct-sec-label">연락처</div>
       <div class="info-item"><div class="info-lbl">Email</div><div class="info-val">info@potscompany.kr</div></div>
-      <div class="info-item"><div class="info-lbl">Tel</div><div class="info-val">070-8888-1799</div></div>
+      <div class="info-item"><div class="info-lbl">Tel</div><div class="info-val">010-9170-2030</div></div>
       <div class="info-item"><div class="info-lbl">Web</div><div class="info-val">www.klif.co.kr</div></div>
-      <div class="info-item"><div class="info-lbl">SNS</div><div class="info-val">@klif_official</div></div>
+      <div class="info-item"><div class="info-lbl">SNS</div><div class="info-val">@klif.co.kr</div></div>
     </div>
   </div>
 </div>
