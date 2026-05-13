@@ -118,7 +118,22 @@ tbody td { padding: 11px 16px; border-bottom: 1px solid var(--gray-line); text-a
 tbody td:first-child { font-weight: 600; text-align: left; color: var(--black); }
 tbody tr:nth-child(even) td { background: var(--gray-bg); }
 
-/* MODULAR */
+/* MODULAR PRODUCT SECTION */
+.mp-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 0; }
+.mp-hero-text h2 { margin-bottom: 16px; }
+.mp-hero-img { position: relative; }
+.mp-hero-img img { width: 100%; height: auto; display: block; }
+
+.mp-pot { margin-top: 64px; padding-top: 56px; border-top: 1px solid var(--gray-line); display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.mp-pot-img img { width: 100%; height: auto; display: block; }
+.mp-pot-list { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+.mp-pot-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; font-weight: 300; color: #444; line-height: 1.6; }
+.mp-pot-item::before { content: '—'; color: var(--blue); font-weight: 600; flex-shrink: 0; }
+
+.tech-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); margin-top: 56px; }
+.tech-card { background: var(--white); padding: 28px 24px; }
+.tech-card h3 { font-size: 15px; margin-bottom: 10px; }
+.tech-label { font-size: 22px; font-weight: 900; color: var(--black); letter-spacing: 0; text-transform: none; margin-bottom: 12px; line-height: 1.3; word-break: keep-all; }
 .feat-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 1px; background: var(--gray-line); border: 1px solid var(--gray-line); margin-top: 44px; }
 .feat-card { background: var(--white); padding: 26px 22px; }
 .feat-card svg { display: block; margin-bottom: 12px; }
@@ -159,6 +174,7 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
     <div class="nav-logo">KLIF</div>
     <div class="nav-links">
       <a href="#about">소개</a>
+      <a href="#modular-product">모듈러 솔루션</a>
       <a href="#landscaping">조경 솔루션</a>
       <a href="#care">식물 관리</a>
       <a href="#modular">모듈러 렌탈</a>
@@ -244,6 +260,73 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
         <div class="step-n">5</div>
         <div class="step-title">피드백 &amp;<br>리포트 제공</div>
         <div class="step-desc">관리 이력과 식물 상태 리포트 정기 전달</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- MODULAR PRODUCT -->
+<section id="modular-product">
+<div class="wrap">
+  <div class="label">Modular Solution</div>
+
+  <!-- Hero: 텍스트 + 이미지 -->
+  <div class="mp-hero">
+    <div class="mp-hero-text">
+      <h2>더 쉽게, 더 편리하게<br>관리하는 조경 솔루션</h2>
+      <p class="lead">실내에서 식물을 기르고 가꾸는 일은 생각보다 많은 어려움이 있습니다. 클리프의 모듈러 솔루션은 이러한 번거로움을 덜어주어, 누구나 쉽고 편안하게 식물을 즐길 수 있는 실내 가든 시스템입니다.</p>
+    </div>
+    <div class="mp-hero-img">
+      <img src="modular.jpg" alt="클리프 모듈러 솔루션">
+    </div>
+  </div>
+
+  <!-- 6가지 기술 카드 -->
+  <div style="margin-top:56px;">
+    <div class="tech-label">특허받은 모듈러가 만드는 6가지 압도적 기술</div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <h3>관수 걱정 제로</h3>
+        <p class="body">수조에 물만 채워 넣으면 끝. 갈수, 과습, 물넘침 걱정이 없습니다.</p>
+      </div>
+      <div class="tech-card">
+        <h3>10초 유닛 교체</h3>
+        <p class="body">식물이 죽거나 무드를 바꾸고 싶을 때, 유닛만 들어올려 10초 만에 교체완료</p>
+      </div>
+      <div class="tech-card">
+        <h3>리프트 &amp; 락 시스템</h3>
+        <p class="body">간단한 리프트 메커니즘으로 누구나 힘들이지 않고 식물 배치를 변경합니다.</p>
+      </div>
+      <div class="tech-card">
+        <h3>안전한 실내 인프라</h3>
+        <p class="body">물 넘침 걱정이 없이 카페테, 원목 마루 어디든 안심하고 설치 가능합니다.</p>
+      </div>
+      <div class="tech-card">
+        <h3>누구나 전문가</h3>
+        <p class="body">누가 관리해도 완벽한 상태 유지, 3~4주에 한 번 수조 체크면 충분합니다.</p>
+      </div>
+      <div class="tech-card">
+        <h3>자유로운 합식</h3>
+        <p class="body">서로 다른 식물을 합식해도 개별 관수가 진행되어 과습/갈수 걱정이 없습니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 모듈형 화분 시스템 -->
+  <div class="mp-pot">
+    <div class="mp-pot-img">
+      <img src="modular_inside.jpg" alt="모듈형 화분 시스템">
+    </div>
+    <div>
+      <div class="label">Modular Pot System</div>
+      <h2>모듈형 화분 시스템</h2>
+      <p class="lead" style="margin-top:12px;">내 마음대로 교체하고 변경하는 모듈형 화분 시스템으로 기존 여러 식물이 함께 심겨져 있는 가든 구성은 식물 하나 교체하기도 어려움이 있지만 모듈형 화분 시스템은 언제나 쉽고 편리하게 화분이 교체가 가능합니다.</p>
+      <div class="mp-pot-list">
+        <div class="mp-pot-item">모듈러 화분으로 완성하는 나만의 플랜테리어</div>
+        <div class="mp-pot-item">취향에 따라 손쉽게 바꾸는 조합</div>
+        <div class="mp-pot-item">식물 하나 교체도 간결하고 매끄럽게</div>
+        <div class="mp-pot-item">공간에 맞춰 자유로운 변화</div>
       </div>
     </div>
   </div>
@@ -444,7 +527,7 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
     <div>
       <div class="ct-sec-label">연락처</div>
       <div class="info-item"><div class="info-lbl">Email</div><div class="info-val">info@potscompany.kr</div></div>
-      <div class="info-item"><div class="info-lbl">Tel</div><div class="info-val">070-8888-2799</div></div>
+      <div class="info-item"><div class="info-lbl">Tel</div><div class="info-val">070-8888-1799</div></div>
       <div class="info-item"><div class="info-lbl">Web</div><div class="info-val">www.klif.co.kr</div></div>
       <div class="info-item"><div class="info-lbl">SNS</div><div class="info-val">@klif_official</div></div>
     </div>
