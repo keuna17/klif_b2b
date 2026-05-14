@@ -259,8 +259,56 @@ footer { border-top: 1px solid var(--gray-line); padding: 26px 0; }
   #modular         { page-break-before: always; }
   #care            { page-break-before: always; }  /* 5페이지 시작 */
   #contact         { page-break-before: avoid; }   /* care와 같은 페이지 */
+
+/* ===================== MOBILE ===================== */
+@media (max-width: 768px) {
+
+  /* 기본 여백 */
+  :root { --pad: 20px; }
+  section { padding: 48px 0; }
+  #hero { padding: 48px 0 36px; }
+
+  /* NAV */
+  .nav-inner { height: auto; padding: 12px var(--pad); flex-wrap: wrap; gap: 10px; }
+  .nav-links { gap: 14px; flex-wrap: wrap; }
+  .nav-links a { font-size: 11px; }
+
+  /* 헤딩 */
+  h1 { font-size: 28px; }
+  h2 { font-size: 22px; }
+  .lead { font-size: 14px; }
+  .hero-sub { font-size: 14px; }
+
+  /* ABOUT — 3컬럼 → 1컬럼 */
+  .svc-grid { grid-template-columns: 1fr; }
+  .how-box { padding: 24px 20px; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 20px; }
+  .step { padding: 0; border-left: none !important; }
+  .step + .step { border-left: none; }
+
+  /* MODULAR PRODUCT */
+  .mp-hero { grid-template-columns: 1fr; gap: 24px; }
+  .mp-hero-img img { min-height: 200px; }
+  .tech-grid { grid-template-columns: 1fr; }
+  .mp-pot { grid-template-columns: 1fr; gap: 24px; }
+  .mp-pot-img img { min-height: 200px; }
+
+  /* LANDSCAPING — 벤다이어그램 */
+  .venn-wrap svg { max-width: 100%; }
+  .blob-row { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .cat-row { grid-template-columns: 1fr; }
+
+  /* PLANT CARE */
+  .care-grid { grid-template-columns: 1fr; }
+
+  /* MODULAR RENTAL */
+  .feat-grid { grid-template-columns: 1fr; }
+  .b2b-grid { grid-template-columns: 1fr; }
+
+  /* CONTACT */
+  .ct-grid { grid-template-columns: 1fr; gap: 32px; }
 }
-</style>
+
 </head>
 <body>
 
